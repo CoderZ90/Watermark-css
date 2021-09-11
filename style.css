@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Import Google Font - Poppins */
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* just doing some stylings */
+  padding: 100px;
+}
+/* now the important part :) */
+.container::after {
+  content: '';
+  position: absolute;
+  /* sticking it to top and left */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./watermarkImg.png') no-repeat center;
+  /* now it is center but when we scroll it is still up so*/
+  background-attachment: fixed;
+  /* make it unselectable */
+  pointer-events: none;
+  /* send it back */
+  z-index: -1;
+  /* decreasing opacity */
+  opacity: 0.5;
+}
+h2 {
+  font-size: 32px;
+  color: #222;
+}
+span {
+  color: #4561ff;
+}
+.requested {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.content {
+  margin-top: 20px;
+}
